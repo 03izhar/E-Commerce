@@ -9,7 +9,10 @@ const {
     blockUser,
     unblockUser,
     handleRefreshToken,
-    logout
+    logout,
+    updatePassword,
+    forgotPasswordToken,
+    resetPassword
 } = require("../controller/userController");
 const { 
     authMiddleware,
@@ -19,7 +22,13 @@ const router = express.Router();
 
 router.post('/register', createUser);
 
-router.get('/login', userLoginCtrl);
+router.post('/forgot-password-token', forgotPasswordToken);
+
+router.put('/reset-password/:token', resetPassword);
+
+router.put('/password', authMiddleware, updatePassword);
+
+router.post('/login', userLoginCtrl);
 
 router.get('/all-users', getAllUser);
 
