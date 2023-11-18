@@ -24,7 +24,6 @@ const authMiddleware = asyncHandler(async (req, res, next) => {
 const isAdmin = asyncHandler(async (req, res, next) => {
     // console.log(req.user);
 
-
     if (req?.user?.role === "admin") {
         next();
     } else {
