@@ -9,7 +9,7 @@ const createCoupon = asyncHandler(async(req,res)=>{
     } catch (error) {
         throw new Error(error);
     }
-})
+});
 
 const getAllCoupons = asyncHandler(async(req,res)=>{
     try {
@@ -18,7 +18,7 @@ const getAllCoupons = asyncHandler(async(req,res)=>{
     } catch (error) {
         throw new Error(error);
     }
-})
+});
 
 const updateCoupon = asyncHandler(async(req,res)=>{
     const {id} = req.params;
@@ -29,7 +29,7 @@ const updateCoupon = asyncHandler(async(req,res)=>{
     } catch (error) {
         throw new Error(error);
     }
-})
+});
 
 const deleteCoupon = asyncHandler(async(req,res)=>{
     const {id} = req.params;
@@ -40,7 +40,7 @@ const deleteCoupon = asyncHandler(async(req,res)=>{
     } catch (error) {
         throw new Error(error);
     }
-})
+});
 
 
 module.exports = {
