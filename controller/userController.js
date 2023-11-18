@@ -1,4 +1,4 @@
-const User = require("../models/userModel")
+const User = require("../models/userModel");
 const asyncHandler = require("express-async-handler");
 const { generateToken } = require("../config/jwtToken");
 const { validMongoDbId } = require("../utils/validateMongodbID");
@@ -208,7 +208,7 @@ const forgotPasswordToken = asyncHandler(async(req,res)=>{
 const resetPassword = asyncHandler(async (req, res) => {
     const {password} = req.body;
     const {token} = req.params;
-    console.log(token)
+    console.log(token);
     const hashedToken = crypto.createHash("sha256").update(token).digest('hex');
     const user = await User.findOne({
         passwordResetToken: hashedToken,
